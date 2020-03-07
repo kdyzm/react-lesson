@@ -1,6 +1,7 @@
 import React from 'react'
 
 import '../assets/css/TodoList.css'
+import storage from '../utils/storage';
 
 class TodoList extends React.Component {
     constructor(props) {
@@ -34,6 +35,15 @@ class TodoList extends React.Component {
         };
     }
 
+    componentDidMount(){
+        var list=storage.get("list");
+        if(list){
+            this.setState({
+                list:list
+            })
+        }
+    }
+
     handleTodo=(e)=>{
         console.log(e.keyCode)
         if(e.keyCode==13){
@@ -47,6 +57,7 @@ class TodoList extends React.Component {
                 todo: list
             })
             this.refs.todo.value = "";
+            storage.set("list",list);
         }
     }
 
@@ -56,6 +67,7 @@ class TodoList extends React.Component {
         this.setState({
             list: list
         })
+        storage.set("list",list);
     }
 
     handleDelete=(key)=>{
@@ -64,6 +76,7 @@ class TodoList extends React.Component {
         this.setState({
             list:list
         })
+        storage.set("list",list);
     }
     render() {
         return (
@@ -81,7 +94,7 @@ class TodoList extends React.Component {
                                 return (
                                     <li key={key}>
                                         <input className="checkbox" type="checkbox" checked={value.checked} onChange={this.handleChange.bind(this,key)}/>{value.name}
-                                        <input class="delete" type="button" value="删除" onClick={this.handleDelete.bind(this,key)}/>
+                                        <input className="delete" type="button" value="删除" onClick={this.handleDelete.bind(this,key)}/>
                                     </li>
                                 )
                             }
@@ -98,7 +111,7 @@ class TodoList extends React.Component {
                                 return (
                                     <li key={key}>
                                         <input className="checkbox" type="checkbox" checked={value.checked} onChange={this.handleChange.bind(this,key)}/>{value.name}
-                                        <input class="delete" type="button" value="删除" onClick={this.handleDelete.bind(this,key)}/>
+                                        <input className="delete" type="button" value="删除" onClick={this.handleDelete.bind(this,key)}/>
                                     </li>
                                 )
                             }
