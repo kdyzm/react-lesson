@@ -78,8 +78,8 @@ class FormTest extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     姓名：<input value={this.state.name} onChange={this.handleName}/>
                     <br/><br/>
-                    性别：男<input type="radio" value="1" checked={this.state.sex == 1} onChange={this.handleSex}/>
-                        女<input type="radio" value="2" checked = {this.state.sex == 2} onChange={this.handleSex}/>
+                    性别：男<input type="radio" value="1" checked={this.state.sex === 1} onChange={this.handleSex}/>
+                        女<input type="radio" value="2" checked = {this.state.sex === 2} onChange={this.handleSex}/>
                     <br/>
                     <br/>
                     城市：

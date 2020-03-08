@@ -46,7 +46,7 @@ class TodoList extends React.Component {
 
     handleTodo=(e)=>{
         console.log(e.keyCode)
-        if(e.keyCode==13){
+        if(e.keyCode===13){
             var todo = this.refs.todo.value;
             var list=this.state.list;
             list.push({
@@ -98,6 +98,7 @@ class TodoList extends React.Component {
                                     </li>
                                 )
                             }
+                            return "";
                         })
                     }
                 </ul>
@@ -115,6 +116,7 @@ class TodoList extends React.Component {
                                     </li>
                                 )
                             }
+                            return "";
                             
                         })
                     }

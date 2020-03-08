@@ -40,7 +40,7 @@ class News extends React.Component{
             <div>
             <img style={this.state.style} src={require("../assets/images/kikyo.jpg")} alt="hello,kikyo"/>
             <img style={this.state.style} src={img} alt="hello,kikyo1"/>
-            <img style={{"background":"blue"}} src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white-c4d7df0a00.png"/>
+            <img alt="Hello" style={{"background":"blue"}} src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white-c4d7df0a00.png"/>
             </div>
             <hr/>
             {this.state.list2}
