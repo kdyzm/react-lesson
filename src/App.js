@@ -6,11 +6,12 @@ import News from './components/News'
 import ButtonTest from './components/ButtonTest';
 import FormTest from './components/FormTest';
 import TodoList from './components/TodoList';
+import AxiosDemo from './components/AxiosDemo'
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <AxiosDemo/>
     </div>
   );
 }
