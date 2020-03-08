@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/css/Home.css';
+import Header from './Header'
 
 class Home extends React.Component{
     constructor(props){
@@ -21,10 +22,16 @@ class Home extends React.Component{
         };
     }
 
+    getHeader = ()=>{
+        this.refs.header.run();
+    }
+
     render(){
 
         return (
         <div>
+            <Header ref="header" title="我是一个Home组件"/>
+            <hr/>
             <h2>你好，react，我是一个Home组件，react组件里的所有节点都要被根节点包含起来</h2>
             <div title={this.state.title}>我是一个div</div>
             <div className={this.state.color}>我是一个红色的div</div>
@@ -36,9 +43,10 @@ class Home extends React.Component{
                 行内样式显示
             </div>
             <div style={this.state.style}>
-
                 行内样式显示2
             </div>
+            <br/>
+            <button onClick={this.getHeader}>获取Header节点并调用方法</button>
         </div>
         )
     }
