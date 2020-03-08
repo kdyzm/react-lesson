@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
     constructor(props) {
@@ -21,6 +22,17 @@ class Header extends Component {
             </div>
         );
     }
+}
+
+Header.defaultProps={
+
+    title: "我是默认头部信息"
+
+}
+
+Header.propTypes={
+    title: PropTypes.string,
+    num: PropTypes.number
 }
 
 export default Header;

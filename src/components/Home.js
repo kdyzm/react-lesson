@@ -30,7 +30,7 @@ class Home extends React.Component{
 
         return (
         <div>
-            <Header ref="header" title="我是一个Home组件"/>
+            <Header ref="header" title="Home" num="abc"/>
             <hr/>
             <h2>你好，react，我是一个Home组件，react组件里的所有节点都要被根节点包含起来</h2>
             <div title={this.state.title}>我是一个div</div>
