@@ -7,11 +7,12 @@ import ButtonTest from './components/ButtonTest';
 import FormTest from './components/FormTest';
 import TodoList from './components/TodoList';
 import AxiosDemo from './components/AxiosDemo'
+import LifeCycle from './components/LifeCycle';
 
 function App() {
   return (
     <div className="App">
-      <AxiosDemo/>
+      <LifeCycle/>
     </div>
   );
 }
