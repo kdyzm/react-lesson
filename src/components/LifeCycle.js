@@ -11,6 +11,11 @@ class LifeCycle extends Component {
         };
     }
 
+    shouldComponentUpdate(nextProps,nextState){
+        console.log("shouldComponentUpdate 函数执行");
+        return true;
+    }
+
     UNSAFE_componentWillUpdate(){
         console.log("UNSAFE_componentWillUpdate 函数执行");
     }
@@ -25,6 +30,11 @@ class LifeCycle extends Component {
 
     componentDidMount(){
         console.log("componentDidMount 函数执行");
+    }
+
+
+    componentWillUnmount(){
+        console.log("componentWillUnmount 函数执行");
     }
 
     updateMsg=()=>{
@@ -45,7 +55,7 @@ class LifeCycle extends Component {
         return (
             <div>
                 {
-                    this.state.flag?<Header/>:""
+                    this.state.flag?<Header titil='LifeCycle传值给Header'/>:""
                 }
                 {
                     this.state.flag?<button onClick={this.updateFlag}>卸载头部组件</button>:<button onClick={this.updateFlag}>加载头部组件</button>

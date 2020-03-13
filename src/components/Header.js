@@ -6,9 +6,12 @@ class Header extends Component {
         super(props);
         var title=this.props.title;
         this.state = { 
-
             title: title
         };
+    }
+
+    UNSAFE_componentWillReceiveProps(){
+        console.log("Header UNSAFE_componentWillReceiveProps 函数执行");
     }
 
     run=()=>{
