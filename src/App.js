@@ -16,8 +16,8 @@ function App() {
       <div>
         <header className="title">
           <Link to="/">首页</Link>
-          <Link to="news">新闻</Link>
-          <Link to="product">产品</Link>
+          <Link to="/news">新闻</Link>
+          <Link to="/product">产品</Link>
         </header>
 
         <br/>
