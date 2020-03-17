@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './assets/css/index.css';
 import './assets/css/Common.css';
 import ProductDetail from './components/router-demo/ProductDetail';
+import Login from './components/router-demo/Login';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/product" component={Product}/>
         <Route path="/news-detail/:id" component={NewsDetail}/>
         <Route path="/product-detail" component={ProductDetail}/>
+        <Route path="/login" component={Login}/>
       </div>
     </Router>
   );
