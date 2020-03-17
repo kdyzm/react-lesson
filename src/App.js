@@ -4,7 +4,7 @@ import React from 'react';
 import Home  from './components/router-demo/Home'
 import News from './components/router-demo/News'
 import Product from './components/router-demo/Product'
-import NewsDetail from './components/router-demo/NewsDetail'
+import NewsDetail from './components/router-demo/News/NewsDetail'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './assets/css/index.css';
 import './assets/css/Common.css';

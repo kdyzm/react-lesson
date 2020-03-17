@@ -1,48 +1,27 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import NewsList from './News/NewsList';
+import NewsEdit from './News/NewsEdit';
 
 class News extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            title: "我是新闻组件",
-            list:[
-
-                {
-                    id:111,
-                    title: "新闻111111"
-                },
-                {
-                    id:2222,
-                    title: "新闻2222"
-                },
-                {
-                    id:333,
-                    title: "新闻3333"
-                },
-                {
-                    id:444,
-                    title: "新闻4444"
-                }
-            ]
-         };
+        }
     }
     render() {
         return (
-            <div>
-                <h2>{this.state.title}</h2>
-                <hr/>
-                <ul>
-                {
-                    this.state.list.map((value,key)=>{
-                        return (
-                            <li key={key}>
-                                <Link to={`/news-detail/${value.id}`}>{value.title}</Link>
-                            </li>
-                        )
-                    })
-                }
-                </ul>
+            <div className="content">
+                <div  className="left">
+                    <Link to="/news/list">新闻列表</Link>
+                    <br/>
+                    <br/>
+                    <Link to="/news/edit">新闻编辑</Link>
+                </div>
+                <div className = "right">
+                    <Route path="/news/list" component={NewsList}/>
+                    <Route path="/news/edit" component={NewsEdit}/>
+                </div>
             </div>
         );
     }
