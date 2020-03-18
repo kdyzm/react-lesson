@@ -9,6 +9,9 @@ class Product extends Component {
         this.state = {
         }
     }
+    componentDidMount(){
+        console.log(this.props.routes);
+    }
     render() {
         return (
             <div className="content">
@@ -19,8 +22,17 @@ class Product extends Component {
                     <Link to="/product/edit">产品编辑</Link>
                 </div>
                 <div className="right">
-                    <Route exact path="/product" component={ProductList}/>
-                    <Route path="/product/edit" component={ProductEdit}/>
+                    {
+                        this.props.routes.map((value,key)=>{
+                            if(value.exact){
+                                return <Route exact key={key} path={value.path}  component={value.component}/>
+                                
+                            }else{
+                                return <Route key={key} path={value.path}  component={value.component}/>
+                            }
+                            
+                        })
+                    }
                 </div>
             </div>
         );

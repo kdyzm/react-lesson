@@ -19,8 +19,17 @@ class News extends Component {
                     <Link to="/news/edit">新闻编辑</Link>
                 </div>
                 <div className = "right">
-                    <Route path="/news/list" component={NewsList}/>
-                    <Route path="/news/edit" component={NewsEdit}/>
+                {
+                        this.props.routes.map((value,key)=>{
+                            if(value.exact){
+                                return <Route exact key={key} path={value.path}  component={value.component}/>
+                                
+                            }else{
+                                return <Route key={key} path={value.path}  component={value.component}/>
+                            }
+                            
+                        })
+                    }
                 </div>
             </div>
         );

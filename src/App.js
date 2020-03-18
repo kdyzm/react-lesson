@@ -23,9 +23,23 @@ function App() {
         {
           routes.map((route,key)=>{
             if(route.exact){
-              return <Route key={key} path={route.path} component={route.component} exact/>
+              return <Route key={key} path={route.path} exact
+              
+                render={props => (
+                  // pass the sub-routes down to keep nesting
+                  <route.component {...props} routes={route.routes} />
+                )}
+              
+              />
             }else{
-              return <Route key={key} path={route.path} component={route.component}/>
+              return <Route key={key} path={route.path}
+              
+              render={props => (
+                // pass the sub-routes down to keep nesting
+                  <route.component {...props} routes={route.routes} />
+              )}
+              
+              />
             }
           })
         }
