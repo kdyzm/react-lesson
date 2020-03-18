@@ -1,3 +1,16 @@
 body{
     padding: 50px;
 }
+
+.content{
+    width: 100%;
+    display: flex;
+}
+
+.content .left{
+    width: 300px;
+}
+
+.content .right{
+    flex: 1;
+}
