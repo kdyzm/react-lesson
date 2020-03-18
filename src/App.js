@@ -1,15 +1,11 @@
 import React from 'react';
 // import logo from './assets/images/logo.svg';
 // import './assets/css/App.css';
-import Home  from './components/router-demo/Home'
-import News from './components/router-demo/News'
-import Product from './components/router-demo/Product'
-import NewsDetail from './components/router-demo/News/NewsDetail'
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './assets/css/index.css';
 import './assets/css/Common.css';
-import ProductDetail from './components/router-demo/ProductDetail';
-import Login from './components/router-demo/Login';
+import routes from './config/routes';
 
 function App() {
   return (
@@ -24,12 +20,15 @@ function App() {
         <br/>
         <br/>
         <br/>
-        <Route exact path="/" component={Home}/>
-        <Route path="/news" component={News}/>
-        <Route path="/product" component={Product}/>
-        <Route path="/news-detail/:id" component={NewsDetail}/>
-        <Route path="/product-detail" component={ProductDetail}/>
-        <Route path="/login" component={Login}/>
+        {
+          routes.map((route,key)=>{
+            if(route.exact){
+              return <Route key={key} path={route.path} component={route.component} exact/>
+            }else{
+              return <Route key={key} path={route.path} component={route.component}/>
+            }
+          })
+        }
       </div>
     </Router>
   );
