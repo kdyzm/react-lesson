@@ -1,6 +1,5 @@
-body{
-    padding: 50px;
-}
+
+@import '~antd/dist/antd.css';
 
 .content{
     width: 100%;
